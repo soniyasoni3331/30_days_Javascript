@@ -1,6 +1,6 @@
 // Task 1
-let number = 34;
-if(number >= 0){
+let number = 0;
+if(number > 0){
     console.log("Number is positive");
 }else if(number < 0){
     console.log("Number is Negative");
@@ -9,7 +9,7 @@ if(number >= 0){
 }
 
 // Task 2
-let age = 34;
+let age = 24;
 if(age >= 18){
     console.log("You can vote!");
 }else if(age < 18){
@@ -18,46 +18,46 @@ if(age >= 18){
 
 // Task 3
 let number1 = 34;
-let number2 = 34;
-let number3 = 34;
+let number2 = 68;
+let number3 = 98;
 
 if(number1 > number2 && number1 > number3){
-    console.log(number1," is the highest number");
+    console.log(number1,"is the highest number");
 }else if(number2 > number1 && number2 > number3){
-    console.log(number2, " is the highes number");
+    console.log(number2, "is the highest number");
 }else{
-    console.log(number3, " is the highes number");
+    console.log(number3, "is the highest number");
 }
 // Task 4
-let day = "Wednessday"
+let day = 4;
  switch (day) {
-    case Monday:
+    case 1:
             console.log("The day is Monday");
         break;
-    case Tuesday:
+    case 2:
             console.log("The day is Tuesday");
         break;
-    case Wednessday:
+    case 3:
             console.log("The day is Wednessday");
         break;
-    case Thursday:
+    case 4:
             console.log("The day is Thursday");
         break;
-    case Friday:
+    case 5:
             console.log("The day is Friday");
         break;
-    case Saturday:
+    case 6:
             console.log("The day is Saturday");
         break;
     default:
-            console.log("The day is Monday");
+            console.log("The day is Sunday");
         break;
  }
 // Task 5
 
 let Score = 70;
 let grade;
- switch (Score) {
+ switch (true) {
     case (Score >= 90 && Score <=100):
             grade = 'A'
             console.log(`Your grade is ${grade}!`);
@@ -82,5 +82,13 @@ let grade;
 
 // Task 6
 let num = 5;
-(num % 2 == 0) ? "Number is even" :"Number is odd";
+(num % 2 == 0) ? console.log("Number is even") :console.log("Number is odd");
+
 // Task 7
+
+let year = 1900;
+if((year % 100 == 0) ? (year % 400== 0) : (year % 4 === 0)){
+    console.log("The year is Leap year");
+}else{
+    console.log("The year is not a Leap year");
+}
