@@ -140,7 +140,7 @@ const fetchFun =()=>{
     }).then((data)=>{
         console.log(data)
     }).catch(()=>
-        conssole.error("data is not fetched!")
+        console.error("data is not fetched!")
     )
     
 }
