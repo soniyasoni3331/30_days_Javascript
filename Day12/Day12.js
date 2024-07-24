@@ -82,9 +82,32 @@ try {
 }
 
 // Task 6
-const randomPromise = ()=>{
-    return new Promise((resolve, rejected)=>{
+function randomPromise() {
+    return new Promise((resolve, reject) => {
         const isSuccess = Math.random() > 0.5;
+        setTimeout(() => {
+            if (isSuccess) {
+                resolve("Promise resolved successfully!");
+            } else {
+                reject(new Error("Promise rejected with an error."));
+            }
+        }, 1000);
+    });
+}
+
+randomPromise()
+    .then(result => {
+        console.log(result);
+    })
+    .catch(error => {
+        console.error("An error occurred:", error.message);
+    });
+
+
+// Task 7
+const randomPromise2 = ()=>{
+    return new Promise((resolve, rejected)=>{
+        const isSuccess = Math.random() > 0.5
         setTimeout(()=>{
             if(isSuccess){
                 resolve("Promise resolved!");
@@ -97,7 +120,7 @@ const randomPromise = ()=>{
 
 async function handlePromise(){
     try {
-        const result = await randomPromise()
+        const result = await randomPromise2()
         console.log(result)
     } catch (error) {
         console.error("An error occured:",error.message)
@@ -105,6 +128,35 @@ async function handlePromise(){
 }
 handlePromise();
 
-// Task 7
 // Task 8
+const URL = 'https://jsonplaceholder.typicode.com/postss'
+
+const fetchFun =()=>{
+    fetch(URL).then((response)=>{
+        if(!response.ok){
+            throw new Error("Network response was not ok " + response.statusText);
+        }
+        return response.json()
+    }).then((data)=>{
+        console.log(data)
+    }).catch(()=>
+        conssole.error("data is not fetched!")
+    )
+    
+}
+fetchFun()
+
 // Task 9
+const fetchData = async () =>{
+    try {
+        const response = await fetch(URL);
+        if(!response.ok){
+            throw new Error("Network response was not ok " + response.statusText);
+        }
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.error("Fetch error",error.message);
+    }
+}
+fetchData()
