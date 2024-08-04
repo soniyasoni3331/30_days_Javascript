@@ -113,18 +113,16 @@ function memoize(fn) {
   };
 }
   
-// Example usage with a simple function
 function add(a, b) {
     return a + b;
 }
   
 const memoizedAdd = memoize(add);
   
-console.log(memoizedAdd(1, 2)); // Output: 3 (computed)
-console.log(memoizedAdd(1, 2)); // Output: 3 (cached)
-console.log(memoizedAdd(2, 3)); // Output: 5 (computed)
-console.log(memoizedAdd(2, 3)); // Output: 5 (cached)
-  
+console.log(memoizedAdd(1, 2)); 
+console.log(memoizedAdd(1, 2)); 
+console.log(memoizedAdd(2, 3)); 
+console.log(memoizedAdd(2, 3)); 
 
 
 // Task 8
